@@ -10,6 +10,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+#Import menu.ahk
+#Import binds.ahk
+#Import binds-intrusive.ahk
 ;; The following parameters all represent a fraction of the width or
 ;; height. i.e., a value of 0.9, means 0.9*WindowWidth. Let me know if
 ;; you need to change this.
@@ -57,39 +60,8 @@ calculateDimensions() {
   rowPlayerHero := 1
   rowPlayerHand := 0
   
-  ;; Arena Mode Buttons
-  arenaModePlayButtonX := 0.6425
-  arenaModePlayButtonY := 0.765
-  arenaModeCard0Y      := 
-  arenaModeCard0X      := 
-  arenaModeCard1Y      := 
-  arenaModeCard1X      := 
-  arenaModeCard2Y      := 
-  arenaModeCard2X      := 
-  arenaModeCard3Y      := 
-  arenaModeCard3X      := 
-
-  ;; Play Mode Buttons
-  playModePlayButtonX   := 0.80375
-  playModePlayButtonY   := 0.82667
-  playModeRankedButtonX := 0.875
-  playModeRankedButtonY := 0.17
-  playModeCasualButtonX := 0.74125
-  playModeCasualButtonY := 0.17
-
-  deck1X    := 0.715
-  deck1Y    := 0.1625
-  deckStepX := 0.16875
-  deckStepY := 0.205
-
-  ;; Main Menu
-  playModeButtonX     := 0.5
-  playModeButtonY     := 0.31
-  practiceModeButtonX := 0.5
-  practiceModeButtonY := 0.385
-  arenaModeButtonX    := 0.5
-  arenaModeButtonY    := 0.448333333333
-
+  menusPrepareRelativeVariables()  
+  
   ;; Name of the Hearthstone window
   winTitle := "Hearthstone"
 
@@ -114,39 +86,14 @@ calculateDimensions() {
       }
   }
 
+  menusCalculateAbsoluteVariables()  
+  
   heroPowerX     := WindowX + WindowWidth * heroPowerX
   heroPowerY     := WindowY + WindowHeight * heroPowerY
   heroIconX      := WindowX + WindowWidth * heroIconX
   heroIconY      := WindowY + WindowHeight * heroIconY
   enemyIconX     := WindowX + WindowWidth * enemyIconX
   enemyIconY     := WindowY + WindowHeight * enemyIconY
-  arenaModePlayButtonX := WindowX + WindowWidth * arenaModePlayButtonX
-  arenaModePlayButtonY := WindowY + WindowHeight * arenaModePlayButtonY
-  arenaModeCard0Y      := 
-  arenaModeCard0X      := 
-  arenaModeCard1Y      := 
-  arenaModeCard1X      := 
-  arenaModeCard2Y      := 
-  arenaModeCard2X      := 
-  arenaModeCard3Y      := 
-  arenaModeCard3X      :=
-  playModePlayButtonX   := WindowX + WindowWidth * playModePlayButtonX
-  playModePlayButtonY   := WindowY + WindowHeight * playModePlayButtonY
-  playModeRankedButtonX := WindowX + WindowWidth * playModeRankedButtonX
-  playModeRankedButtonY := WindowY + WindowHeight * playModeRankedButtonY
-  playModeCasualButtonX := WindowX + WindowWidth * playModeCasualButtonX
-  playModeCasualButtonY := WindowY + WindowHeight * playModeCasualButtonY
-  deck1X    := WindowX + WindowWidth * deck1X
-  deck1Y    := WindowY + WindowHeight * deck1Y
-  deckStepX := WindowWidth * deckStepX
-  deckStepY := WindowHeight * deckStepY
-  playModeButtonX     := WindowX + WindowWidth * playModeButtonX
-  playModeButtonY     := WindowY + WindowHeight * playModeButtonY
-  practiceModeButtonX := WindowX + WindowWidth * practiceModeButtonX
-  practiceModeButtonY := WindowY + WindowHeight * practiceModeButtonY
-  arenaModeButtonX    := WindowX + WindowWidth * arenaModeButtonX
-  arenaModeButtonY    := WindowY + WindowHeight * arenaModeButtonY
-
   handStep       := handStep       * WindowWidth
   boardStep      := boardStep      * WindowWidth
   handRowY     := WindowY + handRowY     * WindowHeight
@@ -315,108 +262,4 @@ moveToButton(pos) {
   }
 }
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Keybinds
-;; Here we bind the actual keys.
-#IfWinActive Hearthstone
 
-Space::click()
-b::click()
-+Space::clickEndTurn()
-F2::calculateDimensions()
-
-;; *c::moveRowTowards(0,1)
-;; *d::moveRowTowards(1,1)
-;; *e::moveRowTowards(2,1)
-;; *x::moveRowTowards(0,-1)
-;; *s::moveRowTowards(1,-1)
-;; *w::moveRowTowards(2,-1)
-
-;; *z::moveRowTowards(0,-2)
-;; *a::moveRowTowards(1,-2)
-;; *q::moveRowTowards(2,-2)
-;; *v::moveRowTowards(0,2)
-;; *f::moveRowTowards(1,2)
-;; *r::moveRowTowards(2,2)
-
-*e::clickEndTurn()
-*8::clickEndTurn()
-*p::click()
-*o::cycleButtons(1)
-*u::cycleButtons(-1) 	
-*l::moveRight()
-*j::moveLeft()
-*i::moveUp()
-*k::moveDown()
-
-*Numpad9::    cycleButtons(1)
-*NumpadPgUp:: cycleButtons(1)
-*PgDn::       cycleButtons(1)
-*RControl::   cycleButtons(1)
-*Numpad1::    cycleButtons(-1) 	
-*NumpadEnd::  cycleButtons(-1)
-*Numpad7::    cycleButtons(-1) 	
-*NumpadHome:: cycleButtons(-1)
-*End::        clickEndTurn()
-*Delete::     clickEndTurn()
-*NumpadSub::  clickEndTurn()
-*Numpad5::    click()
-*NumpadClear::click()
-*Numpad0::    click()
-*NumpadIns::  click()
-*Numpad6::    moveRight()
-*NumpadRight::moveRight()
-*Right::      moveRight()
-*Numpad4::    moveLeft()
-*NumpadLeft:: moveLeft()
-*Left::       moveLeft()
-*Numpad8::    moveUp()
-*NumpadUp::   moveUp()
-*Up::         moveUp()
-*Numpad2::    moveDown()
-*NumpadDown:: moveDown()
-*Down::       moveDown()
-
-;; Numpad1 	NumpadEnd
-;; Numpad3 	NumpadPgDn
-;; NumpadDot  	NumpadDel
-;; NumpadDiv  	NumpadDiv 
-;; NumpadMult  	NumpadMult 
-;; NumpadEnter 	NumpadEnter
-
-;; *NumpadAdd::cycleButtons()
-
-;; *d::move()
-;; *e::move()
-;; *x::move()
-;; *s::move()
-;; *w::move()
-;; *z::move()
-;; *a::move()
-;; *q::move()
-
-;; +v::moveRowTowards(0, 4)
-;; +f::moveRowTowards(1, 4)
-;; +r::moveRowTowards(2, 4)
-;; +c::moveRowTowards(0, 3)
-;; +d::moveRowTowards(1, 3)
-;; +e::moveRowTowards(2, 3)
-;; +x::moveRowTowards(0, -3)
-;; +s::moveRowTowards(1, -3)
-;; +w::moveRowTowards(2, -3)
-;; +z::moveRowTowards(0, -4)
-;; +a::moveRowTowards(1, -4)
-;; +q::moveRowTowards(2, -4)
-
-F12::reload
-Pause::suspend
-~Enter::suspend
-#IfWinActive
-
-#9::
-  Run, C:\Program Files\Hearthstone\Hearthstone Beta Launcher.exe
-  WinWait, Hearthstone
-  calculateDimensions()
-  return
-  
-#0::MsgBox, handStep %handStep% `n WindowX %WindowX% `n WindowY %WindowY% `n WindowWidth %WindowWidth% `n WindowHeight %WindowHeight% `n  actualWidth %actualWidth% `n actualHeight %actualHeight% `n endTurnX %endTurnX% `n HandStep %HandStep% `n BoardStep %BoardStep% `n endTurnX %endTurnX% `n
