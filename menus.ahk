@@ -48,6 +48,7 @@ menusPrepareRelativeVariables() {
   arenaModeButtonX    := 0.5
   arenaModeButtonY    := 0.448333333333
 
+  currentMenu := 0
 }
 
 menusCalculateAbsoluteVariables() {
@@ -83,3 +84,39 @@ menusCalculateAbsoluteVariables() {
   
 }
 
+moveHor(dir) {
+  global
+  if (currentMenu = mainMenu) {
+    if (yPos = mainMenuBottomRow)
+      xPos := posMod(xPos + dir, mainMenuHorItems)
+    else {
+      yPos := mainMenuBottomRow
+      if (dir > 0)
+        xPos := mainMenuCollection
+      else
+        xPos := mainMenuPacks
+    }
+    moveToMainButton()
+  }
+  else if (currentMenu = arenaMenu) {
+    xPos := posMod(xPos + dir, arenaMenuHorItems)
+    moveToArenaButton()
+  }
+  
+}
+moveVer(dir) {
+  global
+  if (currentMenu = mainMenu) {
+    if (yPos = mainMenuBottomRow)
+      xPos := 
+    yPos := posMod(yPos + dir, mainMenuVerItems)
+    moveToMainButton()
+  }
+  else if (currentMenu = arenaMenu)
+    return
+} 
+
+;; Strictly positive version of the mod function
+posMod(a,b) {
+  local x := mod(a,b)
+}
