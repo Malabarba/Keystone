@@ -211,8 +211,9 @@ moveRowTowards(row, dir) {
   else if (row < 0) {
     row := numberOfCombatRows-1
   }
+
   if (isButtonRow(row)) {
-    cycleButtons(dir)
+    cycleButtonsRow(row,dir)
   }
   else {
     if (currentRow = row) {
@@ -225,8 +226,21 @@ moveRowTowards(row, dir) {
       MouseMove, %xMovement%, %yMovement%, 0
     }
     if (GetKeyState("Control"))
-      MsgBox, yMovement %yMovement% `n xMovement %xMovement% `n currentRow %currentRow% `n row %row% `n currentRow %currentRow%
+      MsgBox, yMovement %yMovement% `n xMovement %xMovement% `n currentRow %currentRow% `n row %row% 
     currentRow := row
+  }
+}
+
+cycleButtonsRow(row,dir) {
+  global  
+  ;; Assumes it was given a button row
+  if (row = currentRow)
+    cycleButtons(dir)
+  else {
+    if (row = rowEnemyHero)
+      moveToButton(2)
+    else 
+      moveToButton(1)
   }
 }
 
@@ -274,11 +288,14 @@ cycleButtons(dir) {
       cyclePosition := 1 ;; Hero Power
       ;; MsgBox, cyclePosition
   }
+  ;; if (GetKeyState("Control"))
+    ;; MsgBox, cyclePosition  
   moveToButton(cyclePosition)
 }
 
 isButtonRow(row) {
-  return ((row = rowEnemyHero) || (row = rowPlayerHero))
+  global   
+  return (row = rowEnemyHero) || (row = rowPlayerHero)
 }
 
 moveToButton(pos) {
