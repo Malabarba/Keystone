@@ -191,30 +191,20 @@ cycleButtonsRow(row,dir) {
   }
 }
 
-moveRight() {
-  global currentRow
-  moveRowTowards(currentRow,1)
+moveHor(dir) {
+  global currentRow, currentMenu
+  if (currentMenu)
+    menusMoveHor(dir)
+  else
+    moveRowTowards(currentRow,dir)
 }
-moveLeft() {
-  global currentRow
-  moveRowTowards(currentRow,-1)
-}
-moveUp() {
-  global currentRow
-  ;; if (isInHeroButton())
-  ;;   currentRow := rowPlayerHand
-  ;; if (currentRow = 3)
-    ;; currentRow := -1
-  moveRowTowards(currentRow+1,0)
+moveVer(dir) {
+  global currentRow, currentMenu
+  if (currentMenu)
+    menusMoveVer(dir)
+  else
+    moveRowTowards(currentRow + dir,0)
 } 
-moveDown() {
-  global currentRow
-  ;; if (currentRow = 0)
-  ;;   currentRow := numberOfCombatRows - 1
-  ;; if (isInHeroButton())
-  ;;   currentRow := rowPlayerMinions
-  moveRowTowards(currentRow-1,0)
-}
 
 isInHeroButton() {
   global  
