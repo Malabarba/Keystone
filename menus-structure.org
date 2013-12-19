@@ -1,0 +1,18 @@
+Text in this file must be split into headers (a single word preceded
+by "* "), and each header must be immediately followed by a single
+table. Extra text after table is ignored and may be used for comments.
+
+* main
+|       |       |      | play 0.5 0.31      |        |
+|       |       |      | practice 0.5 0.385 |        |
+|       |       |      | arena 0.5 0.45     |        |
+| store | quest | pack | collection         | option |
+
+* arena
+| card1 | card2 | card3 | playButton 0.6425 0.765 | back |
+
+* play
+| deck1 | deck2 | deck3 | casual 0.74125 0.17 | ranked 0.875 0.17          |      |
+| deck4 | deck5 | deck6 |                     |                            |      |
+| deck7 | deck8 | deck9 |                     |                            |      |
+|       |       |       |                     | playButton 0.80375 0.82667 | back |

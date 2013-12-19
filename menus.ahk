@@ -17,6 +17,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 menusPrepareRelativeVariables() {
   global  
 
+  ;; TODO do this (967194)
   ;; Arena Mode Buttons
   arenaModePlayButtonX := 0.6425
   arenaModePlayButtonY := 0.765
@@ -35,6 +36,7 @@ menusPrepareRelativeVariables() {
   playModeCasualButtonX := 0.74125
   playModeCasualButtonY := 0.17
 
+  ;; TODO wrong (452847)
   deck1X    := 0.715
   deck1Y    := 0.1625
   deckStepX := 0.16875

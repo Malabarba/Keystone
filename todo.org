@@ -1,9 +1,14 @@
 
 
+* TODO Arena card positions
+[[file:menus.ahk::%3B%3B%20TODO%20do%20this%20(967194)][file:menus.ahk::;; TODO do this (967194)]]
+* TODO Play mode deck positions are wrong
+[[file:menus.ahk::%3B%3B%20TODO%20wrong%20(452847)][wrong]]
 * DONE After clickEnd, doesn't reeeally move to hero icon.                      :bug:
   CLOSED: [2013-12-19 Thu 00:59]
 
-* TODO Hero icon should be a row as well.
+* DONE Hero icon should be a row as well.
+  CLOSED: [2013-12-19 Thu 19:17]
 
 * DONE After clicking on any enemy, move back to friendly row
   CLOSED: [2013-12-19 Thu 01:33]
