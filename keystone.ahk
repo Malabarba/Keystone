@@ -110,11 +110,28 @@ calculateDimensions()
 
 clickEndTurn() {  
   global
-  MouseMove, %endTurnX%, %endTurnY%, 0, 
-  click()
+  move(endTurnX, endTurnY, 1, 0, 0)
   sleep 100
   moveToButton(0)
   calculateDimensions()
+}
+
+clickOptions() {  
+  global
+  move(optionsX, optionsY, 1, concedeX, concedeY)
+}
+
+;; move to X Y, click if DO, then move to AX AY
+move(x,y,do,ax,ay) {  
+  global
+  MouseMove, %x%, %y%, 0, 
+  if (do) {
+    click()
+    if (ax) {
+      sleep 100
+      MouseMove, %ax%, %ay%, 0,
+    }
+  }
 }
 
 click() {
