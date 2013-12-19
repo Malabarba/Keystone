@@ -20,6 +20,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 calculateDimensions() {
   global  
 
+  ;; Options Button
+  optionsX := 0.95
+  optionsY := 0.95
   ;; The 'End' button is far to the right, so its X coordinate is almost 1.
   EndTurnX       := 0.91
   EndTurnY       := 0.45
@@ -77,6 +80,12 @@ calculateDimensions() {
 
   currentRow := rowPlayerMinions
 
+  ;; Options Button
+  optionsX := optionsX * actualWidth
+  optionsY := optionsY * actualHeight
+  concedeX := concedeX * actualWidth
+  concedeY := concedeY * actualHeight
+  
   endTurnX := WindowX + WindowWidth * EndTurnX
   endTurnY := WindowY + WindowHeight * endTurnY
 }
