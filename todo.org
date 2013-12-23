@@ -3,7 +3,9 @@
 * DONE After clickEnd, doesn't reeeally move to hero icon.                      :bug:
   CLOSED: [2013-12-19 Thu 00:59]
 
-* TODO Hero icon should be a row as well.
+* DONE Hero icon should be a row as well.
+  CLOSED: [2013-12-23 Mon 18:59]
 
 * DONE After clicking on any enemy, move back to friendly row
   CLOSED: [2013-12-19 Thu 01:33]
+* TODO Download links on readme
