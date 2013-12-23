@@ -17,8 +17,8 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ~Enter::suspend
 
++Space::clickEndTurn()
 Space::click()
-b::click()
 
 *e::clickEndTurn()
 *8::clickEndTurn()
