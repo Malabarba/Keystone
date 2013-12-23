@@ -1,3 +1,6 @@
+Keystone 
+-------------------------------------------------------------------------------
+
 **Play Hearthstone with the keyboard.**
 
 -----
@@ -5,33 +8,8 @@
 **Keystone** is a tiny executable that runs in the background while you
 play *Hearthstone*, and allows you to control the game using the
 keyboard. Keys are described in depth [below][], but the short version
-is that you can use *Arrow Keys* to move around, *Numpad 0* to click,
-and *End* to end your turn.
-
-## No Drawbacks (and NO WARRANTY) ##
-
-*Keystone* is perfectly well-intended and non-intrusive, which is to say:
-
-1. It simply controls your mouse, so it doesn't do anything ugly like
-dll injection.
-2. It only acts inside the Hearthstone window, so it doesn't interfere
-with anything else.
-3. The default keys don't interfere with your typing, so you can still chat
-with your friends.
-4. It does *NOT* automate anything and it is *NOT* a bot of any kind.
-So it's not a violation of the TOS.
-5. It will *NOT* attempt to install anything or make any sort of
-internet connection. 
-
-If you want to check any of the above claims, the source is available
-for viewing [here][github-source]. You may read, download, modify, and compile it
-at your leisure, but you may not distribute it (or a modified version
-of it) without my permission.
-
-That said, we have a disclaimer:  
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+is that you can use **Arrow Keys** to move around, **Numpad 0** to click,
+and **End** to end your turn.
 
 ## Keys Description ##
 
@@ -79,18 +57,42 @@ uses more convetional keys. The disadvantage here is that it
 The following 3 items are all you need to know to play the game:
 
 * `I`, `J`, `K`, and `L` move around;
-* `Space` or `P` click the mouse;
+* `Space` or `O` click the mouse (that's the letter O, not the number);
 * `E`, `8` or `Shift+Space` end your turn.
 
 Also, for convenience:
 
-* `O` and `U` work like the right `Ctrl` key (that's the letter O, not the
-number).
-* All keys specified [above for the full-sized version][]
+* `P` and `U` work like the right `Ctrl` key.
+* All keys specified [above for the full-sized version][] also apply.
 
 
 ## Installation ##
 
+
+## No Drawbacks (and NO WARRANTY) ##
+
+*Keystone* is perfectly well-intended and non-intrusive, which is to say:
+
+1. It simply controls your mouse, so it doesn't do anything ugly like
+dll injection.
+2. It only acts inside the Hearthstone window, so it doesn't interfere
+with anything else.
+3. The default keys don't interfere with your typing, so you can still chat
+with your friends.
+4. It does *NOT* automate anything and it is *NOT* a bot of any kind.
+So it's not a violation of the TOS.
+5. It will *NOT* attempt to install anything or make any sort of
+internet connection. 
+
+If you want to check any of the above claims, the source is available
+for viewing [here][github-source]. You may read, download, modify, and compile it
+at your leisure, but you may not distribute it (or a modified version
+of it) without my permission.
+
+That said, we have a disclaimer:  
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 [below]: #keys
 
