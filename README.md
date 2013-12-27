@@ -41,10 +41,9 @@ Furthermore, there are some more keys, for convenience:
 `Down`).
 * `Numpad -` ends your turn.
 * `Numpad 7` and `9` are similar to the right `Ctrl` key.
-* `F10` opens the options menu, and leaves the mouse on the *"Concede"* button.
-* `F11` reloads some variables, it must be pressed if you move the
+* `Page Up` opens the options menu, and leaves the mouse on the *"Concede"* button.
+* `Scroll Lock` or `Num Lock` reload *Keystone*, **must** be pressed if you move the
 window or change the resolution.
-* `F12` reloads *Keystone* entirely.
 * The `Pause/Break` key pauses and unpauses *Keystone*, which will free up all
 the keys (except for `Pause/Break`).
 
