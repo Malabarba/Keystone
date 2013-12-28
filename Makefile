@@ -1,22 +1,21 @@
-# SRC = $(wildcard *.cpp)
-# LOBJ = $(SRC:.cpp=.o) ##$(wildcard *.o)
-# WOBJ = $(LOBJ:.o=.ow) ##$(wildcard *.ow)
-# DOBJ = LOBJ #$(LOBJ:.o=.do) ##$(wildcard *.do)
-
-# WF = -Wall -Wextra -Wshadow #-Weffc++
-# CF = -I../../Misc -std=c++11 -c $(WF) #-g `sdl-config --cflags` 
-# LF = $(WF)
-# DF = -g
-
 EXE = Keystone.exe
 EXE-LAP = Keystone-laptop.exe
 ICON = icon.png
 LCOMP = wine ahk2exe.exe
 WCOMP = ahk2exe.exe
+SRC = keystone.ahk
+
+ifeq ($(OS),Windows_NT)
+    COMP = $(WCOMP)
+else
+    COMP = $(LCOMP)
+endif
 
 ##############################################
 #########CUSTOM MAKE OPTIONS##################
 ### Running these should always be enough.###
+
+all : lap exe
 
 run : $(EXE)
 	./$(EXE)
@@ -26,8 +25,6 @@ run-lap : $(EXE-LAP)
 
 clean : 
 	rm $(EXE) $(EXE-LAP)
-
-all : lap exe
 
 lap : $(EXE-LAP)
 	echo "Done building "$(EXE-LAP)
