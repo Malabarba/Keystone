@@ -23,6 +23,7 @@ Also, for convenience:
 
 * `N` clicks the right mouse button (used for cancelling actions);
 * `P` and `U` work like the right `Ctrl` key.
+* `B` clicks the options button.
 * All keys specified for the [full-sized version][The Standard Version] also apply.
 
 ### Chatting ###
