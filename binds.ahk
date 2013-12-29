@@ -20,6 +20,7 @@ NumLock::reload
 Pause::suspend
 
 *PgUp::clickOptions()
+*PgDn::clickPlay()
 ;; F5::calculateDimensions()
 
 ;; F1::click1()
@@ -28,7 +29,6 @@ Pause::suspend
 
 *Numpad9::    cycleButtons(1)
 *NumpadPgUp:: cycleButtons(1)
-*PgDn::       cycleButtons(1)
 *RControl::   cycleButtons(1)
 *Numpad1::    cycleButtons(-1) 	
 *NumpadEnd::  cycleButtons(-1)

@@ -42,6 +42,9 @@ calculateDimensions() {
   rowPlayerHero := 1
   rowPlayerHand := 0
   
+  playButtonX := 0.9
+  playButtonY := 0.9
+  
   combatButtonsPrepareRelativeVariables()  
   menusPrepareRelativeVariables()  
   
@@ -88,6 +91,9 @@ calculateDimensions() {
   
   endTurnX := WindowX + WindowWidth * EndTurnX
   endTurnY := WindowY + WindowHeight * endTurnY
+
+  playButtonX := WindowX + WindowWidth * playButtonX
+  playButtonY := WindowY + WindowHeight * playButtonY
 }
 
 calculateDimensions()
@@ -95,6 +101,14 @@ calculateDimensions()
 clickEndTurn() {  
   global
   move(endTurnX, endTurnY, 1, 0, 0)
+  sleep 100
+  moveToButton(0)
+  calculateDimensions()
+}
+
+clickPlay() {  
+  global
+  move(playButtonX, playButtonY, 1, 0, 0)
   sleep 100
   moveToButton(0)
   calculateDimensions()
