@@ -21,8 +21,10 @@ calculateDimensions() {
   global  
 
   ;; Options Button
-  optionsX := 0.95
-  optionsY := 0.95
+  optionsX := 0.98
+  optionsY := 0.98
+  concedeX := 0.5
+  concedeY := 0.5
   ;; The 'End' button is far to the right, so its X coordinate is almost 1.
   EndTurnX       := 0.91
   EndTurnY       := 0.45
@@ -89,7 +91,7 @@ calculateDimensions() {
   concedeX := concedeX * actualWidth
   concedeY := concedeY * actualHeight
   
-  endTurnX := WindowX + WindowWidth * EndTurnX
+  endTurnX := WindowX + WindowWidth * endTurnX
   endTurnY := WindowY + WindowHeight * endTurnY
 
   playButtonX := WindowX + WindowWidth * playButtonX
