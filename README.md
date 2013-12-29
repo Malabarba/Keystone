@@ -1,4 +1,4 @@
-Keystone 
+Keystone (Alpha)
 -------------------------------------------------------------------------------
 
 ### Play Hearthstone with the keyboard. ###
@@ -16,16 +16,18 @@ Besides just being convenient, this app should help people with RSI
 pain. Playing Hearthstone on the laptop touchpad hurts my wrist,
 and this little script helps me **a lot**.
 
+Keep in mind this is early alpha, so please [submit bug reports][]!
+
 ## Keys Description ##
 
 For now *Keystone* fully supports the in-match interface, as well as
-clicking the `Play` button after each match so that you can jump right
+clicking the "*Play*" button after each match so that you can jump right
 back into the next. Navigation of the game menus is under works, but
 not supported yet.
 
 There are two versions of the *Keystone* executable: 
 
-1. [The Standard Version][] is designed for full-sized keyboards and doesn't interfere with any keys normally used for typing;
+1. [The Standard Version][] is designed for full-sized keyboards (with direction keys and a Numpad) and doesn't interfere with any keys normally used for typing;
 2. [The Laptop Version][] is designed for smaller keyboards and it does use some alphabet keys.
 
 ## Installation ##
@@ -84,9 +86,11 @@ our best to comply and to notify everyone.
 
 [github-source]: https://github.com/Bruce-Connor/Keystone/
 
-[The Standard Version]: README-fullsize.md
+[The Standard Version]: https://github.com/Bruce-Connor/Keystone/blob/master/README-fullsize.md#full-sized
 
-[The Laptop Version]: README-laptop.md
+[The Laptop Version]: https://github.com/Bruce-Connor/Keystone/blob/master/README-laptop.md#laptop-sized
 
 [download link]: epty
+
+[submit bug reports]: https://github.com/Bruce-Connor/Keystone/issues/new
 
