@@ -9,3 +9,6 @@
 * DONE After clicking on any enemy, move back to friendly row
   CLOSED: [2013-12-19 Thu 01:33]
 * TODO Download links on readme
+* TODO concede coord
+* TODO options coord
+* TODO Playbutton coord
