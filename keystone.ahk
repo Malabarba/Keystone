@@ -12,7 +12,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #Import menu.ahk
 #Import binds.ahk
-#Import binds-intrusive.ahk
+#Import binds-laptop.ahk
 ;; The following parameters all represent a fraction of the width or
 ;; height. i.e., a value of 0.9, means 0.9*WindowWidth. Let me know if
 ;; you need to change this.
@@ -126,6 +126,16 @@ click() {
     moveRowTowards(rowEnemyMinions,1)
   else if (currentRow = rowEnemyHero) || (currentRow = rowEnemyMinions)
     moveRowTowards(rowPlayerMinions,1)
+}
+
+rightClick() {
+  global
+  ControlClick,, %winTitle%,, RIGHT
+  ;; sleep 200
+  ;; If (currentRow = rowPlayerHand)
+  ;;   moveRowTowards(rowEnemyMinions,1)
+  ;; else if (currentRow = rowEnemyHero) || (currentRow = rowEnemyMinions)
+  ;;   moveRowTowards(rowPlayerMinions,1)
 }
 
 xStep(row) {
