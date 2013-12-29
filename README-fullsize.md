@@ -4,10 +4,11 @@ The following 3 items are all you need to know to play the game:
 
 * `Arrow Keys` move around;
 * `Numpad 0` clicks the mouse;
+* `Numpad 1` clicks the right mouse button (used for cancelling actions);
 * `End` ends your turn.
 
 The `End` key is a bit of a stretch to reach from the arrow keys, but
-that's *intentional* so you don't hit it by accident (after all, it
+that's *intentional*, so you don't hit it by accident (after all, it
 ends your turn).  
 Furthermore, there are some more keys, for convenience:
 

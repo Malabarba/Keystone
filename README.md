@@ -14,7 +14,7 @@ the short version is that you can use **Arrow Keys** to move around,
 
 Besides just being convenient, this app should help people with RSI
 pain. Playing Hearthstone on the laptop touchpad hurts my wrist,
-and this little script helps me *a lot*.
+and this little script helps me **a lot**.
 
 ## Keys Description ##
 
