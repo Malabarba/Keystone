@@ -37,6 +37,7 @@ Pause::suspend
 *End::        clickEndTurn()
 ;; *Delete::     clickEndTurn()
 *NumpadSub::  clickEndTurn()
+*NumpadDot::  rightClick()
 *Numpad0::    click()
 *NumpadIns::  click()
 *Numpad6::    moveHor(1)

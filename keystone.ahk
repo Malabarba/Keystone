@@ -128,6 +128,16 @@ click() {
     moveRowTowards(rowPlayerMinions,1)
 }
 
+rightClick() {
+  global
+  ControlClick,, %winTitle%,, RIGHT
+  ;; sleep 200
+  ;; If (currentRow = rowPlayerHand)
+  ;;   moveRowTowards(rowEnemyMinions,1)
+  ;; else if (currentRow = rowEnemyHero) || (currentRow = rowEnemyMinions)
+  ;;   moveRowTowards(rowPlayerMinions,1)
+}
+
 xStep(row) {
   global
   if (row = rowPlayerHand)
