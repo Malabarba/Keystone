@@ -14,7 +14,7 @@ SetWorkingDir %A_ScriptDir%
 #Include menus.ahk
 #Include combat-buttons.ahk
 #Include binds.ahk
-#Include binds-intrusive.ahk
+#Include binds-laptop.ahk
 ;; The following parameters all represent a fraction of the width or
 ;; height. i.e., a value of 0.9, means 0.9*WindowWidth. Let me know if
 ;; you need to change this.
@@ -235,7 +235,7 @@ moveHor(dir) {
   ;;   menusMoveHor(dir)
   ;; else
   if (GetKeyState("Shift")) {
-    local xMovement := dir*xStep(currentRow)/2
+    xMovement := dir*xStep(currentRow)/2
     MouseMove, %xMovement%, 0, 0, R
   }
   else

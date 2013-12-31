@@ -1,8 +1,8 @@
 EXE = Keystone.exe
 EXE-LAP = Keystone-laptop.exe
 ICON = icon.png
-LCOMP = wine ahk2exe.exe
-WCOMP = ahk2exe.exe
+LCOMP = wine Ahk2exe.exe
+WCOMP = Ahk2exe.exe
 SRC = keystone.ahk
 
 ifeq ($(OS),Windows_NT)
@@ -39,12 +39,12 @@ exe : $(EXE)
 $(EXE-LAP) : $(SRC) 
 	echo "Building -o"$@;
 	cp binds-intrusive.ahk binds-laptop.ahk
-	$(COMP) $(SRC)
+	$(COMP) /in "$(SRC)" /out "$@"
 	rm -f binds-laptop.ahk
 	touch binds-laptop.ahk 
 
 $(EXE) : $(SRC)
 	echo "Building -o"$@;
 	touch binds-laptop.ahk 
-	$(COMP) $(SRC)
+	$(COMP) /in "$(SRC)" /out "$@"
 
