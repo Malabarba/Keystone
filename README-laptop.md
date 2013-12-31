@@ -10,7 +10,8 @@ won't be able to type in Hearthstone while it is active, but the
 
 The following 5 items are all you need to know to play the game:
 
-* `I`, `J`, `K`, and `L` move around;
+* `I`, `J`, `K`, and `L` move around (holding `Shift` also works for
+  `J` and `L`);
 * `Space` or `O` click the mouse (that's the letter O, not the
 number);
 * `E`, `8` or `Shift+Space` end your turn;

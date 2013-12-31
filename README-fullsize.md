@@ -2,7 +2,8 @@
 
 The following 4 items are all you need to know to play the game:
 
-* `Arrow Keys` move around;
+* `Arrow Keys` move around; if you hold `Shift`, the `Right` and
+  `Left` keys will use smaller steps (almost never needed);
 * `Numpad 0` clicks the mouse;
 * `End` ends your turn;
 * `Page Down` clicks the "*Play*" button at the bottom-left of some
@@ -20,7 +21,7 @@ Furthermore, there are some more keys, for convenience:
 `Down`).
 * `Numpad -` ends your turn.
 * `Numpad 7` and `9` are similar to the right `Ctrl` key.
-* `Page Up` opens the options menu, and leaves the mouse on the *"Concede"* button.
+* `Page Up` opens the options menu, and leaves the mouse right below "*Concede*" button.
 * `Scroll Lock` or `Num Lock` reload *Keystone*, **must** be pressed if you move the
 window or change the resolution.
 * The `Pause/Break` key pauses and unpauses *Keystone*, which will free up all

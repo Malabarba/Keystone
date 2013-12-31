@@ -10,5 +10,7 @@
   CLOSED: [2013-12-19 Thu 01:33]
 * TODO Download links on readme
 * TODO concede coord
-* TODO options coord
-* TODO Playbutton coord
+* DONE options coord
+  CLOSED: [2013-12-31 Tue 19:26]
+* DONE Playbutton coord
+  CLOSED: [2013-12-31 Tue 19:26]

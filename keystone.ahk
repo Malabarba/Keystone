@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.x
+; AutoHotkey Version: v1.1.13.01
 ; Language:       English
 ; Platform:       Win9x/NT
 ; Author:         Artur Malabarba <bruce.connor.am@gmail.com>
@@ -6,9 +6,9 @@
 ; Script Function:
 ;
 #InstallMouseHook
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#NoEnv
+SendMode Input
+SetWorkingDir %A_ScriptDir%
 
 ;; #Include is-fullscreen.ahk
 #Include menus.ahk
@@ -208,8 +208,8 @@ moveRowTowards(row, dir) {
       yMovement := rowHeight(row)
       MouseMove, %xMovement%, %yMovement%, 0
     }
-    if (GetKeyState("Control"))
-      MsgBox, yMovement %yMovement% `n xMovement %xMovement% `n currentRow %currentRow% `n row %row% 
+    ;; if (GetKeyState("Control"))
+    ;;   MsgBox, yMovement %yMovement% `n xMovement %xMovement% `n currentRow %currentRow% `n row %row% 
     currentRow := row
   }
 }
@@ -234,8 +234,14 @@ moveHor(dir) {
   ;; if (currentMenu)
   ;;   menusMoveHor(dir)
   ;; else
+  if (GetKeyState("Shift")) {
+    local xMovement := dir*xStep(currentRow)/2
+    MouseMove, %xMovement%, 0, 0, R
+  }
+  else
     moveRowTowards(currentRow,dir)
 }
+
 moveVer(dir) {
   global currentRow, currentMenu
   calculateDimensions()

@@ -1,4 +1,4 @@
-; AutoHotkey Version: 1.x
+; AutoHotkey Version: v1.1.13
 ; Language:       English
 ; Platform:       Win9x/NT
 ; Author:         Artur Malabarba <bruce.connor.am@gmail.com>
