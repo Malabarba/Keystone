@@ -2,7 +2,20 @@
 ; Language:       English
 ; Platform:       Win9x/NT
 ; Author:         Artur Malabarba <bruce.connor.am@gmail.com>
+; Copyright:      Artur Malabarba <bruce.connor.am@gmail.com>
 ;
+;; ### NO WARRANTY and DISCLAIMER ###
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+;;
+;; Specifically, we take no responsibility if you get banned for using
+;; it or accidentally spend money as a consequence of using it.
+;; USE IT AT YOUR OWN RISK.
+;;
+;; On a lighter note, if Blizzard decides to rule against it, we'll do
+;; our best to comply and to notify everyone.
 
 ;; The following parameters all represent a fraction of the width or
 ;; height. i.e., a value of 0.9, means 0.9*WindowWidth. Let me know if

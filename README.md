@@ -90,7 +90,7 @@ our best to comply and to notify everyone.
 
 [The Laptop Version]: https://github.com/Bruce-Connor/Keystone/blob/master/README-laptop.md#laptop-sized
 
-[download link]: epty
+[download link]: https://github.com/Bruce-Connor/Keystone/releases
 
 [submit bug reports]: https://github.com/Bruce-Connor/Keystone/issues/new
 
