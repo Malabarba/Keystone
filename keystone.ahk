@@ -10,16 +10,21 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-#Import menu.ahk
-#Import binds.ahk
-#Import binds-laptop.ahk
+;; #Include is-fullscreen.ahk
+#Include menus.ahk
+#Include combat-buttons.ahk
+#Include binds.ahk
+#Include binds-intrusive.ahk
 ;; The following parameters all represent a fraction of the width or
 ;; height. i.e., a value of 0.9, means 0.9*WindowWidth. Let me know if
 ;; you need to change this.
 
+currentRow := rowPlayerMinions
+
 calculateDimensions() {
   global  
 
+  counter := A_TickCount
   ;; Options Button
   optionsX := 0.98
   optionsY := 0.98
@@ -56,7 +61,8 @@ calculateDimensions() {
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;;; Here we recalculate the parameters to have absolute values
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  WinGetPos, , , WindowWidth, WindowHeight, %winTitle%
+  WinGetPos, xc, yc, WindowWidth, WindowHeight, %winTitle%
+  ;; MsgBox,  %xc% %yc% %WindowWidth% %WindowHeight% 
   WindowX := 0
   WindowY := 0
 
@@ -83,8 +89,6 @@ calculateDimensions() {
   enemyRowY    := WindowY + WindowHeight*(1 - friendlyRowY)
   friendlyRowY := WindowY + WindowHeight * friendlyRowY
 
-  currentRow := rowPlayerMinions
-
   ;; Options Button
   optionsX := optionsX * actualWidth
   optionsY := optionsY * actualHeight
@@ -96,34 +100,37 @@ calculateDimensions() {
 
   playButtonX := WindowX + WindowWidth * playButtonX
   playButtonY := WindowY + WindowHeight * playButtonY
-}
 
-calculateDimensions()
+  counter := A_TickCount - counter 
+  ;; MsgBox, Update took %counter% ms.
+}
 
 clickEndTurn() {  
   global
+  calculateDimensions()
   move(endTurnX, endTurnY, 1, 0, 0)
   sleep 100
   moveToButton(0)
-  calculateDimensions()
 }
 
 clickPlay() {  
   global
-  move(playButtonX, playButtonY, 1, 0, 0)
+  calculateDimensions()
+  move(arenaModePlayButtonX, arenaModePlayButtonY, 1, 0, 0)
+  sleep 100
+  move(playModePlayButtonX, playModePlayButtonY, 1, 0, 0)
   sleep 100
   moveToButton(0)
-  calculateDimensions()
 }
 
 clickOptions() {  
   global
+  calculateDimensions()
   move(optionsX, optionsY, 1, concedeX, concedeY)
 }
 
 ;; move to X Y, click if DO, then move to AX AY
-move(x,y,do,ax,ay) {  
-  global
+move(x,y,do,ax,ay) {
   MouseMove, %x%, %y%, 0, 
   if (do) {
     click()
@@ -137,7 +144,7 @@ move(x,y,do,ax,ay) {
 click() {
   global
   ControlClick,, %winTitle%
-  sleep 200
+  sleep 100
   If (currentRow = rowPlayerHand)
     moveRowTowards(rowEnemyMinions,1)
   else if (currentRow = rowEnemyHero) || (currentRow = rowEnemyMinions)
@@ -179,6 +186,8 @@ moveRowTowards(row, dir) {
   local xMovement :=
   local yMovement :=
   
+  calculateDimensions()
+  
   if (row >= numberOfCombatRows) {
     row := 0
   }
@@ -207,6 +216,7 @@ moveRowTowards(row, dir) {
 
 cycleButtonsRow(row,dir) {
   global  
+  calculateDimensions()
   ;; Assumes it was given a button row
   if (row = currentRow)
     cycleButtons(dir)
@@ -220,15 +230,19 @@ cycleButtonsRow(row,dir) {
 
 moveHor(dir) {
   global currentRow, currentMenu
-  if (currentMenu)
-    menusMoveHor(dir)
-  else
+  calculateDimensions()
+  ;; if (currentMenu)
+  ;;   menusMoveHor(dir)
+  ;; else
     moveRowTowards(currentRow,dir)
 }
 moveVer(dir) {
   global currentRow, currentMenu
-  if (currentMenu)
-    menusMoveVer(dir)
-  else
+  calculateDimensions()
+  ;; if (currentMenu)
+  ;;   menusMoveVer(dir)
+  ;; else
     moveRowTowards(currentRow + dir,0)
 } 
+
+calculateDimensions()

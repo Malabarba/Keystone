@@ -3,12 +3,6 @@
 ; Platform:       Win9x/NT
 ; Author:         Artur Malabarba <bruce.connor.am@gmail.com>
 ;
-; Script Function:
-;
-#InstallMouseHook
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Keybinds
@@ -22,15 +16,15 @@ Space::click()
 
 *e::clickEndTurn()
 *8::clickEndTurn()
-*p::click()
+*o::click()
 *b::clickOptions()
 *m::clickPlay()
 *n::rightClick()
-*o::cycleButtons(1)
+*p::cycleButtons(1)
 *u::cycleButtons(-1) 	
-*l::moveRight()
-*j::moveLeft()
-*i::moveUp()
-*k::moveDown()
+*l::moveHor(1)
+*j::moveHor(-1)
+*i::moveVer(1)
+*k::moveVer(-1)
 
 #IfWinActive

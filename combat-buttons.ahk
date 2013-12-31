@@ -3,12 +3,6 @@
 ; Platform:       Win9x/NT
 ; Author:         Artur Malabarba <bruce.connor.am@gmail.com>
 ;
-; Script Function:
-;
-#InstallMouseHook
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 combatButtonsPrepareRelativeVariables() {
   global  
