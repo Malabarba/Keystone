@@ -243,7 +243,7 @@ cycleButtonsRow(row,dir) {
     if (row = rowEnemyHero)
       moveToButton(2)
     else 
-      moveToButton(1)
+      moveToButton(0)
   }
 }
 

@@ -72,7 +72,7 @@ cycleButtons(dir) {
       cyclePosition := numberOfCombatButtons - 1
   }
   else {
-    cyclePosition := 1 ;; Hero Power
+    cyclePosition := 0 ;; Hero Power
   }
   moveToButton(cyclePosition)
 }
