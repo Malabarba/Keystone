@@ -1,17 +1,20 @@
 Keystone (Alpha)
 -------------------------------------------------------------------------------
 
-### Play Hearthstone with the keyboard. ###
+#### Play Hearthstone with the keyboard. ####
 
 **Keystone** is a tiny executable that runs in the background while
 you play *Hearthstone*, and allows you to control the game using the
-keyboard.  
+keyboard.
+
 It has been tested on several resolutions in both fullscreen and
-windowed mode, but it's still in development, so **we need testers!**
-If you'd like to help, just install it and bug-report if it doesn't work
-for you.
+windowed mode, but it's still in development, so **we need testers!**  
+If you'd like to help, just install it and [bug-report][] if it doesn't work
+for you (press `Home` key for a bug-report).
 
 -----
+
+## Summary ##
 
 Keys are described in depth [below][Key Descriptions], but
 the short version is that you can use **Arrow Keys** to move around,
@@ -21,7 +24,7 @@ Besides just being convenient, this app should help people with RSI
 pain. Playing Hearthstone on the laptop touchpad hurts my wrist,
 and this little script helps me **a lot**.
 
-Keep in mind this is early alpha, so please [submit bug reports][]!
+Keep in mind this is early alpha, so please [submit bug reports][bug-report]!
 
 ## Keys Description ##
 
@@ -55,10 +58,10 @@ your desktop and start it when you start Hearthstone.
 ## Is This a Bot? ##
 
 **_Keystone_ is not a bot.** It takes a series of precautions to
-avoid being considered a bot. None of them provide flawless
-guarantees, but they should be enough:
+avoid being considered a bot (but keep in mind, that decision
+ultimately depends on Blizzard):
 
-4. It does *NOT* automate anything, and it *tries* very hard to not be a violation of Hearthstone's TOS. There's a key to move the mouse in each direction and a key to click the button, and that's it.
+4. It does *NOT* automate anything, and it *tries* very hard to not be a violation of Hearthstone's TOS. There's a key to move the mouse in each direction and a key to click the button.
 1. It simply moves your mouse in a useful way, and it follows the 1-key to 1-action rule. This means *at least* 1 key must be pressed for each time the mouse will be moved or clicked.
 2. It doesn't do anything ugly like dll injection or reading process memory.
 5. It will *NOT* attempt to install anything or make any sort of internet connection.
@@ -81,7 +84,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 Specifically, we take no responsibility if you get banned for using
-it. USE IT AT YOUR OWN RISK.
+it or if you accidentally spend money in the game. USE IT AT YOUR OWN RISK.
 
 On a lighter note, if Blizzard decides to rule against it, we'll do
 our best to comply and to notify everyone.
@@ -97,5 +100,5 @@ our best to comply and to notify everyone.
 
 [download link]: https://github.com/Bruce-Connor/Keystone/releases
 
-[submit bug reports]: https://github.com/Bruce-Connor/Keystone/issues/new
+[bug-report]: https://github.com/Bruce-Connor/Keystone/issues/new
 
