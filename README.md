@@ -12,6 +12,8 @@ windowed mode, but it's still in development, so **we need testers!**
 If you'd like to help, just install it and [bug-report][] if it doesn't work
 for you (press `Home` key for a bug-report).
 
+*Note Hearthstone is a property of Blizzard, and we are not related to Blizzard in anyway.*
+
 -----
 
 ## Summary ##
