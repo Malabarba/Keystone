@@ -10,10 +10,10 @@ be used for comments.
 | Store | Quest | Pack | Collection         | Option |
 
 * arena
-| Card1 | Card2 | Card3 | PlayButton 0.6425 0.765 | Back |
+| Card1 | Card2 | Card3 | PlayButton 0.62 0.77 | Back |
 
 * play
-| Deck1 | Deck2 | Deck3 | Casual 0.74125 0.17 | Ranked 0.875 0.17          |      |
-| Deck4 | Deck5 | Deck6 |                     |                            |      |
-| Deck7 | Deck8 | Deck9 |                     |                            |      |
-|       |       |       |                     | PlayButton 0.80375 0.82667 | Back |
+| Deck1 | Deck2 | Deck3 | Casual 0.74125 0.17 | Ranked 0.875 0.17   |      |
+| Deck4 | Deck5 | Deck6 |                     |                     |      |
+| Deck7 | Deck8 | Deck9 |                     |                     |      |
+|       |       |       |                     | PlayButton 0.8 0.78 | Back |
