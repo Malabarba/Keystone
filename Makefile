@@ -4,6 +4,7 @@ ICON = icon.png
 LCOMP = wine Ahk2exe.exe
 WCOMP = Ahk2exe.exe
 SRC = keystone.ahk
+ALL-SRC = *.ahk
 
 ifeq ($(OS),Windows_NT)
     COMP = $(WCOMP)
@@ -36,14 +37,14 @@ exe : $(EXE)
 ##############SUFFIX RULES####################
 ##############################################
 
-$(EXE-LAP) : $(SRC) 
+$(EXE-LAP) : $(SRC) $(ALL-SRC)
 	echo "Building -o"$@;
 	cp binds-intrusive.ahk binds-laptop.ahk
 	$(COMP) /in "$(SRC)" /out "$@"
 	rm -f binds-laptop.ahk
 	touch binds-laptop.ahk 
 
-$(EXE) : $(SRC)
+$(EXE) : $(SRC) $(ALL-SRC)
 	echo "Building -o"$@;
 	touch binds-laptop.ahk 
 	$(COMP) /in "$(SRC)" /out "$@"
