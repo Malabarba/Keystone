@@ -29,6 +29,7 @@ SendMode Input
 SetWorkingDir %A_ScriptDir%
 
 ;; #Include is-fullscreen.ahk
+#Include bug-report.ahk
 #Include menus.ahk
 #Include combat-buttons.ahk
 #Include binds.ahk

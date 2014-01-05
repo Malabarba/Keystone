@@ -29,7 +29,7 @@
 ScrollLock::reload
 NumLock::reload
 Pause::suspend
-
+Home::bugReport()
 *PgUp::clickOptions()
 *PgDn::clickPlay()
 ;; F5::calculateDimensions()
