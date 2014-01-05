@@ -3,12 +3,17 @@ Keystone (Alpha)
 
 ### Play Hearthstone with the keyboard. ###
 
------
-
 **Keystone** is a tiny executable that runs in the background while
 you play *Hearthstone*, and allows you to control the game using the
-keyboard (if you don't want an executable, it's also an AutoHotkey
-script). Keys are described in depth [below][Key Descriptions], but
+keyboard.  
+It has been tested on several resolutions in both fullscreen and
+windowed mode, but it's still in development, so **we need testers!**
+If you'd like to help, just install it and bug-report if it doesn't work
+for you.
+
+-----
+
+Keys are described in depth [below][Key Descriptions], but
 the short version is that you can use **Arrow Keys** to move around,
 **Numpad 0** to click, and **End** to end your turn.
 
