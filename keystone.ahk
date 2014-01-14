@@ -43,7 +43,7 @@ currentRow := rowPlayerMinions
 calculateDimensions() {
   global  
 
-  counter := A_TickCount
+  ;; counter := A_TickCount
   ;; Options Button
   optionsX := 0.98
   optionsY := 0.98
@@ -57,7 +57,7 @@ calculateDimensions() {
   ;; Vertical position of your hand
   HandRowY     := 0.962
   ;; Horizontal space between cards on the board
-  boardStep      := 0.1
+  boardStep      := 0.095
   ;; Horizontal space between cards on the hand
   handStep       := 0.05
   
@@ -120,14 +120,14 @@ calculateDimensions() {
   playButtonX := WindowX + WindowWidth * playButtonX
   playButtonY := WindowY + WindowHeight * playButtonY
 
-  counter := A_TickCount - counter 
+  ;; counter := A_TickCount - counter 
   ;; MsgBox, Update took %counter% ms.
 }
 
 clickEndTurn() {  
   global
   calculateDimensions()
-  move(endTurnX, endTurnY, 1, 0, 0)
+  move(endTurnX, endTurnY, 1)
   sleep 100
   moveToButton(0)
 }
@@ -135,29 +135,32 @@ clickEndTurn() {
 clickPlay() {  
   global
   calculateDimensions()
-  move(arenaModePlayButtonX, arenaModePlayButtonY, 1, 0, 0)
+  move(arenaModePlayButtonX, arenaModePlayButtonY, 1)
   sleep 100
-  move(playModePlayButtonX, playModePlayButtonY, 1, 0, 0)
-  sleep 100
-  moveToButton(0)
+  move(playModePlayButtonX, playModePlayButtonY, 1)
+  sleep 100  
+  currentRow := rowPlayerHand
+  moveRowTowards(rowPlayerMinions, 0)
 }
 
 clickOptions() {  
   global
   calculateDimensions()
-  move(optionsX, optionsY, 1, concedeX, concedeY)
+  move(optionsX, optionsY, 1)
+  currentRow := rowPlayerHand
+  moveRowTowards(rowEnemyMinions, 0)
 }
 
 ;; move to X Y, click if DO, then move to AX AY
-move(x,y,do,ax,ay) {
-  MouseMove, %x%, %y%, 0, 
-  if (do) {
+move(x,y,do) {
+  moveRaw( x, y, 0 )
+  if (do)
     click()
-    if (ax) {
-      sleep 100
-      MouseMove, %ax%, %ay%, 0,
-    }
-  }
+}
+moveRel(x,y,do) {
+  moveRaw( x, y, 1 )
+  if (do)
+    click()
 }
 
 click() {
@@ -220,12 +223,12 @@ moveRowTowards(row, dir) {
   else {
     if (currentRow = row) {
       xMovement := dir*xStep(row)
-      MouseMove, %xMovement%, 0, 0, R
+      moveRel( xMovement, 0, 0)
     }
     else {
       xMovement := WindowX + WindowWidth * 0.48 
       yMovement := rowHeight(row)
-      MouseMove, %xMovement%, %yMovement%, 0
+      move( xMovement, yMovement, 0)
     }
     ;; if (GetKeyState("Control"))
     ;;   MsgBox, yMovement %yMovement% `n xMovement %xMovement% `n currentRow %currentRow% `n row %row% 
@@ -255,7 +258,7 @@ moveHor(dir) {
   ;; else
   if (GetKeyState("Shift")) {
     xMovement := dir*xStep(currentRow)/2
-    MouseMove, %xMovement%, 0, 0, R
+    moveRel( xMovement, 0, 0)
   }
   else
     moveRowTowards(currentRow,dir)
@@ -269,5 +272,14 @@ moveVer(dir) {
   ;; else
     moveRowTowards(currentRow + dir,0)
 } 
+
+moveRaw(x,y,rel) {
+  local mouseSpeed := 0
+  if (rel) {
+    MouseMove,%x%, %y%, %mouseSpeed%, R
+  }
+  else
+    MouseMove,%x%, %y%, %mouseSpeed%, 
+}
 
 calculateDimensions()

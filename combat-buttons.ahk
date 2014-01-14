@@ -87,14 +87,14 @@ moveToButton(pos) {
   cyclePosition := pos   
   if (pos = 0){
     currentRow := rowPlayerHero
-    MouseMove, heroIconX, heroIconY,,
+    move( heroIconX, heroIconY,0)
   }
   else if (pos = 1){
     currentRow := rowPlayerHero
-    MouseMove, heroPowerX, heroPowerY,,
+    move( heroPowerX, heroPowerY,0)
   }
   else if (pos = 2){
     currentRow := rowEnemyHero
-    MouseMove, enemyIconX, enemyIconY,,
+    move( enemyIconX, enemyIconY,0)
   }
 }
